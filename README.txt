@@ -1,4 +1,4 @@
-# Be Consistent and Minimal
+# Repository Guidelines
 
 Keep chat replies and answers short and easy to understand.
 These guidelines apply to every repository.
@@ -15,8 +15,8 @@ Prefer portable, minimal solutions over clever ones.
 
 Write comments in third-person singular, starting each with a capital letter.
 Avoid semicolons in comments and prose. Split clauses into sentences instead.
-Never place comments inside function bodies.
 Keep all of a function's commentary in one block above its name.
+Leave function bodies free of comments.
 
 ## Shell
 
@@ -30,9 +30,10 @@ Use the short form only when the command has no long form.
 
 Preserve SPDX headers and add them to new files in repositories that use them.
 Update the copyright year and version only in files with a substantive change.
-Never bump metadata alone. A metadata-only diff is noise.
+Bump metadata only alongside a substantive change.
+A metadata-only diff is noise.
 If a pass makes no meaningful change to a file, revert its year and version.
-When versions are date-based, such as `0.9.YYYYMMDD`, same-day commits share
+When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
 one value. Do not bump a version that is already set to today.
 
 ## Build
@@ -47,7 +48,7 @@ Keep tests deterministic and portable across every supported environment.
 Use Conventional Commits for every commit, with a scope when one exists.
 Favor scoped forms such as `build(deps): ...` and `chore(deps): ...`.
 Write concise, imperative subjects.
-Never add AI attribution, signatures, generated-by trailers, or co-authors.
+Credit every commit to the human author alone.
 Apply the same rule to pull requests, issues, and code comments.
 
 ## Pull Requests
