@@ -56,6 +56,7 @@ Write success cases and failure cases as separate test scripts.
 Use Conventional Commits for every commit, with a scope when one exists.
 Favor scoped forms such as `build(deps): ...` and `chore(deps): ...`.
 Write concise, imperative subjects.
+Keep the commit description within 72 characters.
 Credit every commit to the human author alone.
 Omit AI signatures, generated-by trailers, and co-authors.
 Apply the same rule to pull requests, issues, and code comments.
