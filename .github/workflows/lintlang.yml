@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+---
+name: lintlang
+'on':
+  pull_request:
+    paths: &paths
+      - README.txt
+      - .github/workflows/lintlang.yml
+  push:
+    branches: [master]
+    paths: *paths
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
+jobs:
+  lintlang:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: hermes-labs-ai/lintlang@v0.8.3
+        with:
+          fail-on: fail
+          path: README.txt
