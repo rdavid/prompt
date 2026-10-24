@@ -2,7 +2,7 @@
 
 Keep chat replies and answers short and easy to understand.
 These guidelines apply to every repository.
-A repository-level AGENTS.md or CLAUDE.md wins when the two conflict.
+A repository-level AGENTS.md overrides them on any conflict.
 
 ## Style
 
@@ -31,15 +31,20 @@ Precede it with a description line that ends with a colon.
 Indent the directive one extra space to mark it as subordinate.
 Prefer the single-quoted printf format over backslash escapes.
 Choose the escaped form only when it takes fewer characters.
+Open each script with the shebang, the modeline, and the SPDX lines.
+Then add any shellcheck disable block or description comment.
+Omit the shebang in files that a task runner executes directly.
+Use the modeline `# vi: lbr noet sw=2 ts=2 tw=79 wrap`.
 
 ## Licensing
 
 Preserve SPDX headers and add them to new files in repositories that use them.
 Update the copyright year and version only in files with a substantive change.
-A metadata-only diff is noise, so revert year and version edits when a pass
+A metadata-only diff is noise. Revert year and version edits when a pass
 makes no meaningful change to a file.
 When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
 one value. Leave a version that already shows today's date unchanged.
+Update the version and year before committing, not after.
 
 ## Build
 
