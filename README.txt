@@ -22,9 +22,9 @@ Leave the body free of comments.
 
 ## Shell
 
-Write portable `sh` first and avoid Bash-specific features.
+Write portable sh first and avoid Bash-specific features.
 Use Bash features only when the file already depends on them.
-Prefer the long form of a flag, such as `--force` over `-f`.
+Prefer the long form of a flag, such as --force over -f.
 Apply this in scripts and in documentation examples.
 Use the short form only when the command has no long form.
 Order functions with main first, then the rest alphabetically by name.
@@ -36,7 +36,8 @@ Choose the escaped form only when it takes fewer characters.
 Open each script with the shebang, the modeline, and the SPDX lines.
 Then add any shellcheck disable block or description comment.
 Omit the shebang in files that a task runner executes directly.
-Use the modeline `# vi: lbr noet sw=2 ts=2 tw=79 wrap`.
+Use this modeline:
+  # vi: lbr noet sw=2 ts=2 tw=79 wrap
 
 ## Licensing
 
@@ -62,7 +63,9 @@ Write success cases and failure cases as separate test scripts.
 ## Commits
 
 Use Conventional Commits for every commit, with a scope when one exists.
-Favor scoped forms such as `build(deps): ...` and `chore(deps): ...`.
+Favor scoped forms such as these:
+  build(deps): ...
+  chore(deps): ...
 Write concise, imperative subjects.
 Keep the commit description within 72 characters.
 Credit every commit to the human author alone.
