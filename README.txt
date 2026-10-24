@@ -9,12 +9,14 @@ A repository-level AGENTS.md overrides them on any conflict.
 Match the existing style of each repository before introducing anything new.
 Follow its indentation, naming, comment density, and file layout.
 Keep lines to roughly 79 characters unless the project sets another limit.
+Start every sentence on a new line in README and Markdown files.
 Prefer portable, minimal solutions over clever ones.
 
 ## Comments
 
 Write comments in third-person singular, starting each with a capital letter.
-Avoid semicolons in comments and prose. Split clauses into sentences instead.
+Avoid semicolons in comments and prose.
+Split clauses into sentences instead.
 Put all of a function's commentary in one block above its name.
 Leave the body free of comments.
 
@@ -40,10 +42,11 @@ Use the modeline `# vi: lbr noet sw=2 ts=2 tw=79 wrap`.
 
 Preserve SPDX headers and add them to new files in repositories that use them.
 Update the copyright year and version only in files with a substantive change.
-A metadata-only diff is noise. Revert year and version edits when a pass
-makes no meaningful change to a file.
+A metadata-only diff is noise.
+Revert year and version edits when a pass makes no meaningful change to a file.
 When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
-one value. Leave a version that already shows today's date unchanged.
+one value.
+Leave a version that already shows today's date unchanged.
 Update the version and year before committing, not after.
 
 ## Build
