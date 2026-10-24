@@ -42,9 +42,8 @@ Use this modeline:
 ## Licensing
 
 Preserve SPDX headers and add them to new files in repositories that use them.
-Update the copyright year and version only in files with a substantive change.
-A metadata-only diff is noise.
-Revert year and version edits when a pass makes no meaningful change to a file.
+Update BASE_APP_VERSION in each changed file that declares it.
+Update the SPDX-FileCopyrightText year in each changed file.
 When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
 one value.
 Leave a version that already shows today's date unchanged.
@@ -72,6 +71,7 @@ Credit every commit to the human author alone.
 Omit AI signatures, generated-by trailers, and co-authors.
 Apply the same rule to pull requests, issues, and code comments.
 Apply the semicolon rule to commit messages and pull request descriptions.
+Update the version and year in changed files as the Licensing section says.
 
 ## Pull Requests
 
