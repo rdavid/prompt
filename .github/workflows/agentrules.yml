@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
+# Lints README.txt through its AGENTS.md symlink. The package is installed from
+# PyPI with a pinned hash into a throwaway virtual environment.
+---
+name: agentrules
+'on':
+  pull_request:
+    paths: &paths
+      - README.txt
+      - .github/workflows/agentrules.yml
+  push:
+    branches: [master]
+    paths: *paths
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
+jobs:
+  agentrules:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - run: |
+          sum=ce6543714ea5557539c1dd192423c1894d903be772c3f752e607fa11a8696548
+          ver=0.2.0
+          python3 -m venv venv
+          printf 'agent-rules-lint==%s --hash=sha256:%s\n' "$ver" "$sum" \
+            >requirements.txt
+          venv/bin/pip install \
+            --quiet \
+            --require-hashes \
+            --requirement requirements.txt
+          venv/bin/agent-rules-lint . --warnings-as-errors
