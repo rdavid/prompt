@@ -1,8 +1,9 @@
-# Repository Guidelines
+# Guidelines
 
 Keep chat replies short and easy to understand.
 These guidelines apply to every repository.
 A repository-level AGENTS.md overrides them on any conflict.
+Favor aesthetics over functionality.
 
 ## Style
 
@@ -11,15 +12,14 @@ Follow its indentation, naming, comment density, and file layout.
 Keep lines to roughly 79 characters unless the project sets another limit.
 Start every sentence on a new line in README and Markdown files.
 Prefer portable, minimal solutions over clever ones.
-
-## Comments
-
 Write comments in third-person singular, starting each with a capital letter.
 Avoid semicolons in comments and prose.
 Split clauses into sentences instead.
 Allow multiple sentences on one line in comments.
 Put all of a function's commentary in one block above its name.
 Leave the body free of comments.
+Link another project through its GitHub Pages site when it publishes one.
+Fall back to the repository URL otherwise.
 
 ## Shell
 
@@ -39,16 +39,6 @@ Then add any shellcheck disable block or description comment.
 Omit the shebang in files that a task runner executes directly.
 Use this modeline:
   # vi: lbr noet sw=2 ts=2 tw=79 wrap
-
-## Licensing
-
-Preserve SPDX headers and add them to new files in repositories that use them.
-Update BASE_APP_VERSION in each changed file that declares it.
-Update the SPDX-FileCopyrightText year in each changed file.
-When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
-one value.
-Leave a version that already shows today's date unchanged.
-Update the version and year before committing, not after.
 
 ## Build
 
@@ -72,7 +62,13 @@ Credit every commit to the human author alone.
 Omit AI signatures, generated-by trailers, and co-authors.
 Apply the same rule to pull requests, issues, and code comments.
 Apply the semicolon rule to commit messages and pull request descriptions.
-Follow the Licensing section for version and year updates.
+Preserve SPDX headers and add them to new files in repositories that use them.
+Update BASE_APP_VERSION in each changed file that declares it.
+Update the SPDX-FileCopyrightText year in each changed file.
+When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
+one value.
+Leave a version that already shows today's date unchanged.
+Update the version and year before committing, not after.
 
 ## Pull Requests
 
@@ -80,8 +76,3 @@ Explain the user-visible change and note any portability implications.
 Report the lint and test results.
 Link related issues where applicable.
 Skip UI screenshots unless they are necessary.
-
-## Documentation
-
-Link another project through its GitHub Pages site when it publishes one.
-Fall back to the repository URL otherwise.
