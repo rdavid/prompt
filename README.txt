@@ -17,6 +17,7 @@ Prefer portable, minimal solutions over clever ones.
 Write comments in third-person singular, starting each with a capital letter.
 Avoid semicolons in comments and prose.
 Split clauses into sentences instead.
+Allow multiple sentences on one line in comments.
 Put all of a function's commentary in one block above its name.
 Leave the body free of comments.
 
