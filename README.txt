@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-Keep chat replies and answers short and easy to understand.
+Keep chat replies short and easy to understand.
 These guidelines apply to every repository.
 A repository-level AGENTS.md overrides them on any conflict.
 
@@ -67,17 +67,17 @@ Favor scoped forms such as these:
   build(deps): ...
   chore(deps): ...
 Write concise, imperative subjects.
-Keep the commit description within 72 characters.
+Keep each commit subject within 72 characters.
 Credit every commit to the human author alone.
 Omit AI signatures, generated-by trailers, and co-authors.
 Apply the same rule to pull requests, issues, and code comments.
 Apply the semicolon rule to commit messages and pull request descriptions.
-Update the version and year in changed files as the Licensing section says.
+Follow the Licensing section for version and year updates.
 
 ## Pull Requests
 
 Explain the user-visible change and note any portability implications.
-Confirm the lint and test results.
+Report the lint and test results.
 Link related issues where applicable.
 Skip UI screenshots unless they are necessary.
 
