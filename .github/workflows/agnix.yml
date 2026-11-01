@@ -26,4 +26,4 @@ jobs:
       - uses: agent-sh/agnix@v0.59.1
         with:
           strict: true
-          version: v0.58.0
+          version: v0.59.1
