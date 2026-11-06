@@ -70,10 +70,3 @@ When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
 one value.
 Leave a version that already shows today's date unchanged.
 Update the version and year before committing, not after.
-
-## Pull Requests
-
-Explain the user-visible change and note any portability implications.
-Report the lint and test results.
-Link related issues where applicable.
-Skip UI screenshots unless they are necessary.
