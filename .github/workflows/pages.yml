@@ -3,22 +3,25 @@
 #
 # Builds README.txt into the project's GitHub Pages site. The deploy job's
 # pages:write permission publishes the built site, and id-token:write
-# OIDC-authenticates the deployment.
+# OIDC-authenticates the deployment. A pull request runs the build alone, so a
+# broken site fails before it lands, and only master deploys.
 ---
 name: pages
 'on':
-  push:
-    branches: [master]
-    paths:
+  pull_request:
+    paths: &paths
       - README.txt
       - .github/pages/**
       - .github/workflows/pages.yml
+  push:
+    branches: [master]
+    paths: *paths
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 defaults:
   run:
     shell: sh
@@ -51,6 +54,7 @@ jobs:
         with:
           path: _site
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     permissions:
       pages: write
