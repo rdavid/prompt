@@ -37,6 +37,7 @@ Prefer the single-quoted printf format over backslash escapes.
 Choose the escaped form only when it takes fewer characters.
 Open each script with the shebang, the modeline, and the SPDX lines.
 Then add any shellcheck disable block or description comment.
+Separate the SPDX lines from a following comment with a bare # line.
 Omit the shebang in files that a task runner executes directly.
 Use this modeline:
   # vi: lbr noet sw=2 ts=2 tw=79 wrap
@@ -50,6 +51,8 @@ Keep tests deterministic and portable across every supported environment.
 In scripts that run under errexit, capture an expected failure with
 || ret=$? and compare ret afterward.
 Write success cases and failure cases as separate test scripts.
+Configure Dependabot to open one pull request per dependency.
+Omit the groups key from every dependabot.yml.
 
 ## Commits
 
