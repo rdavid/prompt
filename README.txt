@@ -29,6 +29,7 @@ Use Bash features only when the file already depends on them.
 Prefer the long form of a flag, such as --force over -f.
 Apply this in scripts and in documentation examples.
 Use the short form only when the command has no long form.
+Order command parameters alphabetically, such as id -nu, not id -un.
 Order functions with main first, then the rest alphabetically by name.
 Put a shellcheck disable directive on its own line.
 Precede it with a description line that ends with a colon.
