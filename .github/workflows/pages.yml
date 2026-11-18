@@ -4,7 +4,8 @@
 # Builds README.txt into the project's GitHub Pages site. The deploy job's
 # pages:write permission publishes the built site, and id-token:write
 # OIDC-authenticates the deployment. A pull request runs the build alone, so a
-# broken site fails before it lands, and only master deploys.
+# broken site fails before it lands. Only the master ref deploys, so a manual
+# run on another branch builds without publishing.
 ---
 name: pages
 'on':
@@ -54,7 +55,7 @@ jobs:
         with:
           path: _site
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/master'
     needs: build
     permissions:
       pages: write
