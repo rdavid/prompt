@@ -26,9 +26,10 @@ Fall back to the repository URL otherwise.
 
 Write portable sh first and avoid Bash-specific features.
 Use Bash features only when the file already depends on them.
-Prefer the long form of a flag, such as --force over -f.
+Prefer the long form of a flag, such as git commit --all over git commit -a.
 Apply this in scripts and in documentation examples.
-Use the short form only when the command has no long form.
+Confirm that the long form exists on BSD systems as well as GNU ones.
+Use the short form when the command lacks a portable long form.
 Order command parameters alphabetically, such as id -nu, not id -un.
 Order functions with main first, then the rest alphabetically by name.
 Put a shellcheck disable directive on its own line.
