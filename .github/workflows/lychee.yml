@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
+# Checks the links in README.txt and in the GitHub Pages fragments.
+---
+name: lychee
+'on':
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
+jobs:
+  lychee:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >
+            --no-progress
+            --verbose
+            README.txt
+            './.github/pages/*.html'
+          fail: true
+          lycheeVersion: v0.24.2
