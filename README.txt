@@ -25,7 +25,8 @@ Fall back to the repository URL otherwise.
 ## Shell
 
 Write POSIX sh only and avoid Bash features, since scripts run on BusyBox.
-Prefer a long flag that BSD and GNU share, such as git commit --all over -a.
+Prefer a long flag that BSD, BusyBox, and GNU share.
+For example, use git commit --all over -a.
 Apply this in scripts and in documentation examples.
 Order command parameters alphabetically, such as id -nu, not id -un.
 Order functions with main first, then the rest alphabetically by name.
