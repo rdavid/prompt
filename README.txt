@@ -13,12 +13,11 @@ Keep lines to roughly 79 characters unless the project sets another limit.
 Start every sentence on a new line in README and Markdown files.
 Prefer portable, minimal solutions over clever ones.
 Write comments in third-person singular, starting each with a capital letter.
-Avoid semicolons in comments and prose.
+Avoid semicolons in comments, prose, commit messages, and pull requests.
 Split clauses into sentences instead.
-Allow multiple sentences on one line in comments.
-Place comments in the file description or the function description.
-Put a function's description in one block above its name.
-Avoid comments in the function body.
+Comment only in file and function descriptions, never in function bodies.
+Write a function's description as one block above its name.
+Allow multiple sentences on one line in a comment.
 Link another project through its GitHub Pages site when it publishes one.
 Fall back to the repository URL otherwise.
 
@@ -30,6 +29,10 @@ For example, use git commit --all over -a.
 Apply this in scripts and in documentation examples.
 Order command parameters alphabetically, such as id -nu, not id -un.
 Order functions with main first, then the rest alphabetically by name.
+Declare function variables with local.
+POSIX does not define it, but BusyBox, dash, and mksh support it.
+Keep local variable names to one to three letters, such as i, ip, or fle.
+Capitalize script-level variables, such as SRC or TGT.
 Put a shellcheck disable directive on its own line.
 Precede it with a description line that ends with a colon.
 Indent the directive one extra space to mark it as subordinate.
@@ -65,11 +68,9 @@ Keep each commit subject within 72 characters.
 Credit every commit to the human author alone.
 Omit AI signatures, generated-by trailers, and co-authors.
 Apply the same rule to pull requests, issues, and code comments.
-Apply the semicolon rule to commit messages and pull request descriptions.
 Preserve SPDX headers and add them to new files in repositories that use them.
 Update BASE_APP_VERSION in each changed file that declares it.
 Update the SPDX-FileCopyrightText year in each changed file.
 When versions are date-based, such as 0.9.YYYYMMDD, same-day commits share
 one value.
-Leave a version that already shows today's date unchanged.
 Update the version and year before committing, not after.

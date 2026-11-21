@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 #
-# Allows the noet option in the vi modeline.
+# Allows the fle variable name and the noet option in the vi modeline.
 [default.extend-words]
+fle = "fle"
 noet = "noet"
