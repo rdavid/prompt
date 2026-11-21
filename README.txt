@@ -12,14 +12,17 @@ Follow its indentation, naming, comment density, and file layout.
 Keep lines to roughly 79 characters unless the project sets another limit.
 Start every sentence on a new line in README and Markdown files.
 Prefer portable, minimal solutions over clever ones.
-Write comments in third-person singular, starting each with a capital letter.
 Avoid semicolons in comments, prose, commit messages, and pull requests.
 Split clauses into sentences instead.
+Link another project through its GitHub Pages site when it publishes one.
+Fall back to the repository URL otherwise.
+
+## Comments
+
+Write comments in third-person singular, starting each with a capital letter.
 Comment only in file and function descriptions, never in function bodies.
 Write a function's description as one block above its name.
 Allow multiple sentences on one line in a comment.
-Link another project through its GitHub Pages site when it publishes one.
-Fall back to the repository URL otherwise.
 
 ## Shell
 
@@ -28,22 +31,25 @@ Prefer a long flag that BSD, BusyBox, and GNU share.
 For example, use git commit --all over -a.
 Apply this in scripts and in documentation examples.
 Order command parameters alphabetically, such as id -nu, not id -un.
+Prefer the single-quoted printf format over backslash escapes.
+Choose the escaped form only when it takes fewer characters.
 Order functions with main first, then the rest alphabetically by name.
 Declare function variables with local.
 POSIX does not define it, but BusyBox, dash, and mksh support it.
 Keep local variable names to one to three letters, such as i, ip, or fle.
 Capitalize script-level variables, such as SRC or TGT.
-Put a shellcheck disable directive on its own line.
-Precede it with a description line that ends with a colon.
-Indent the directive one extra space to mark it as subordinate.
-Prefer the single-quoted printf format over backslash escapes.
-Choose the escaped form only when it takes fewer characters.
+
+## Scripts
+
 Open each script with the shebang, the modeline, and the SPDX lines.
 Then add any shellcheck disable block or description comment.
 Separate the SPDX lines from a following comment with a bare # line.
 Omit the shebang in files that a task runner executes directly.
 Use this modeline:
   # vi: lbr noet sw=2 ts=2 tw=79 wrap
+Put a shellcheck disable directive on its own line.
+Precede it with a description line that ends with a colon.
+Indent the directive one extra space to mark it as subordinate.
 
 ## Build
 
