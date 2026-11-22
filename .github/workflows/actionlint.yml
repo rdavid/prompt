@@ -1,11 +1,13 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# Lints the workflow files with a pinned actionlint release.
 ---
 name: actionlint
 'on':
   pull_request:
     paths: &paths
-      - .github/**
+      - .github/workflows/**
   push:
     branches: [master]
     paths: *paths

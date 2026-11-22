@@ -1,13 +1,21 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 #
-# Checks the links in README.txt and in the GitHub Pages fragments.
+# Checks the links in README.txt and in the GitHub Pages fragments. A weekly
+# run catches external links that break without a commit.
 ---
 name: lychee
 'on':
   pull_request:
+    paths: &paths
+      - README.txt
+      - .github/pages/**
+      - .github/workflows/lychee.yml
   push:
     branches: [master]
+    paths: *paths
+  schedule:
+    - cron: '17 5 * * 1'
   workflow_dispatch:
 permissions:
   contents: read
