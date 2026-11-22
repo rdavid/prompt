@@ -10,7 +10,7 @@ Favor aesthetics over functionality.
 Match the existing style of each repository before introducing anything new.
 Follow its indentation, naming, comment density, and file layout.
 Keep lines to roughly 79 characters unless the project sets another limit.
-Start every sentence on a new line in README and Markdown files.
+Start every sentence on a new line in Markdown files, except in comments.
 Prefer portable, minimal solutions over clever ones.
 Avoid semicolons in comments, prose, commit messages, and pull requests.
 Split clauses into sentences instead.
